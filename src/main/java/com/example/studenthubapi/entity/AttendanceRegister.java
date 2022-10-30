@@ -4,23 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@IdClass(AttendanceRegisterId.class)
 public class AttendanceRegister {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long attendanceRegisterId;
-    private String lectureId;
-    private String studentId;
+    private Long lessonId;
+    @Id
+    private Long studentId;
     private Boolean isPresent;
     private LocalDate AttendanceDate;
     private AttendanceType attendanceType;

@@ -1,24 +1,25 @@
 package com.example.studenthubapi.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class LectureRegister {
+@Builder
+public class Lesson {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long lectureRegisterId;
-    private String lectureId;
-    private String batchId;
+    private Long lessonId;
+
+    @ManyToOne
+    @JoinColumn(name="batch_id")
+    private Batch batch;
     private String dateAndDay;
 }

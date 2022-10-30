@@ -52,4 +52,8 @@ public class LessonService {
             return new ArrayList<>();
         }
     }
+
+    public List<Lesson> findAllLessons(){
+        return lessonRepo.findAll();
+    }
 }

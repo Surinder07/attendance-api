@@ -8,24 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Batch {
+public class EnrollmentRegister {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long batchId;
-
-    private String batchName;
-    private Integer batchNumber;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private String duration;
-    private String instructor;
-
+    private Long enrollmentRegisterId;
+    private String batchId;
+    private String studentId;
 }

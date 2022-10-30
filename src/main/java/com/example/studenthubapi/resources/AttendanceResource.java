@@ -1,6 +1,6 @@
 package com.example.studenthubapi.resources;
 
-import com.example.studenthubapi.dto.AttendenceDTO;
+import com.example.studenthubapi.dto.AttendanceDTO;
 import com.example.studenthubapi.service.AttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +18,7 @@ public class AttendanceResource {
     private AttendanceService attendanceService;
 
     @PostMapping("/insert")
-    public String insertAttendance(@RequestBody AttendenceDTO attendenceDTO){
+    public String insertAttendance(@RequestBody AttendanceDTO attendenceDTO){
         Boolean result = attendanceService.insertAttendance(attendenceDTO);
         if(result){
             return "Success: Attendance has been added successfully";
@@ -28,7 +28,7 @@ public class AttendanceResource {
         }
     }
 
-    public String insertAllAttendance(@RequestBody List<AttendenceDTO> attendenceDTOs){
+    public String insertAllAttendance(@RequestBody List<AttendanceDTO> attendenceDTOs){
         Boolean result = attendanceService.insertAllAttendance(attendenceDTOs);
         if(result){
             return "Success: Attendance has been added successfully";

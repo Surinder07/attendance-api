@@ -1,6 +1,6 @@
 package com.example.studenthubapi.service;
 
-import com.example.studenthubapi.dto.AttendenceDTO;
+import com.example.studenthubapi.dto.AttendanceDTO;
 import com.example.studenthubapi.entity.AttendanceRegister;
 import com.example.studenthubapi.entity.AttendanceType;
 import com.example.studenthubapi.repository.AttendanceRegisterRepo;
@@ -16,11 +16,11 @@ public class AttendanceService {
     @Autowired
     private AttendanceRegisterRepo attendanceRegisterRepo;
 
-    public Boolean insertAttendance(AttendenceDTO attendenceDTO){
+    public Boolean insertAttendance(AttendanceDTO attendenceDTO){
         try {
             Long lessonId = attendenceDTO.getLessonId();
             Long studentId = attendenceDTO.getStudentId();
-            String attendanceType = attendenceDTO.getAttendaceType();
+            String attendanceType = attendenceDTO.getAttendanceType();
             AttendanceType attandType = AttendanceType.online;
             if (attendanceType.equalsIgnoreCase("inclass")) {
                 attandType = AttendanceType.inClass;
@@ -39,9 +39,9 @@ public class AttendanceService {
         }
     }
 
-    public Boolean insertAllAttendance(List<AttendenceDTO> attendenceDTOs){
+    public Boolean insertAllAttendance(List<AttendanceDTO> attendenceDTOs){
         Boolean result = Boolean.TRUE;
-        for(AttendenceDTO attendenceDTO : attendenceDTOs){
+        for(AttendanceDTO attendenceDTO : attendenceDTOs){
             if(insertAttendance(attendenceDTO) == Boolean.FALSE){
                 result = Boolean.FALSE;
             }

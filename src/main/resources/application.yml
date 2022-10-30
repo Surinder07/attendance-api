@@ -1,8 +1,8 @@
 Spring:
   datasource:
-    url: jdbc:mysql://testdb1.crxleaq3kvcv.us-east-2.rds.amazonaws.com:3306/testdb
-    username: admin
-    password: Shyam123
+    url: jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5530434
+    username: sql5530434
+    password: lpVkdrAVlR
 
   jpa:
     show-sql: true

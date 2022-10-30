@@ -1,6 +1,7 @@
 package com.example.studenthubapi.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(AttendanceRegisterId.class)
+@Builder
 public class AttendanceRegister {
 
     @Id

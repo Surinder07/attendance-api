@@ -28,6 +28,7 @@ public class BatchService {
     }
 
     public List<Batch> getBatchesByBatchName(String batchName){
-        return batchRepo.findByBatchNameContaining(batchName);
+        return batchRepo.findByBatchName(batchName);
+        //return batchRepo.findByBatchNameContaining(batchName);
     }
 }

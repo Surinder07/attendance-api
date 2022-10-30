@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface StudentRepo extends JpaRepository<Student, Long> {
 
-    @Query("Select s from student s where s.firstName like %:firstName%")
+    @Query("Select s from Student s where s.firstName like %:firstName%")
     public List<Student> findByFirstNameContaining(String firstName);
 
-    @Query("Select s from student s where s.lastName like %:lastName%")
+    @Query("Select s from Student s where s.lastName like %:lastName%")
     public List<Student> findByLastNameContaining(String lastName);
 }

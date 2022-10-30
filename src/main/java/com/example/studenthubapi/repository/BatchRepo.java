@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface BatchRepo extends JpaRepository<Batch, Long> {
 
-    @Query("Select b from batch b where b.batchName like %:batchName%")
-    public List<Batch> findByBatchNameContaining(String batchName);
+//    @Query("Select b from batch b where b.batch_name like %:batchName%")
+//    public List<Batch> findByBatchNameContaining(String batchName);
+
+    public List<Batch> findByBatchName(String batchName);
 }

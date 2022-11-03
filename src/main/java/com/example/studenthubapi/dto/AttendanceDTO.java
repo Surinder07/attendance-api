@@ -1,6 +1,7 @@
 package com.example.studenthubapi.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class AttendanceDTO {
     private Long lessonId;
     private Long studentId;
-    private String attendanceType;
+    private String attendanceType = "";
 }

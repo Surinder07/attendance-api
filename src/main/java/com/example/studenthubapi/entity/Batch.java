@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,7 +26,13 @@ public class Batch {
     private String duration;
     private String instructor;
 
-    @OneToMany(mappedBy = "batch")
-    private Set<EnrollmentRegister> registrations;
+//    @OneToMany(mappedBy = "batch",fetch = FetchType.LAZY)
+//    private Set<EnrollmentRegister> registrations;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Lesson> lessons;
+
+    @OneToMany
+    private List<Student> students;
 
 }

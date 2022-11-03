@@ -21,6 +21,9 @@ public class Student {
     private String email;
     private String address;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY)
     private Set<EnrollmentRegister> registrations;
+
+    @OneToOne
+    private Batch batch;
 }

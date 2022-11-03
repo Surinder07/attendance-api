@@ -27,12 +27,17 @@ public class EnrollmentRegisterService {
         Optional<Student> student = studentService.findStudentById(enrollmentDTO.getStudentId());
         Optional<Batch> batch = batchService.findBatchById(enrollmentDTO.getBatchId());
         if(student.isPresent() && batch.isPresent()){
-            enrollmentRegisterRepo.save(EnrollmentRegister.builder()
-                            .student(student.get())
-                            .batch(batch.get())
-                            .registerAt(LocalDateTime.now())
-                            .build());
+            Batch batchexist = batch.get();
+            batchexist.getStudents().add(student.get());
+            batchService.addorUpdateBatch(batchexist);
             return Boolean.TRUE;
+
+//            enrollmentRegisterRepo.save(EnrollmentRegister.builder()
+//                            .student(student.get())
+//                            .batch(batch.get())
+//                            .registerAt(LocalDateTime.now())
+//                            .build());
+//            return Boolean.TRUE;
         }
         return Boolean.FALSE;
     }

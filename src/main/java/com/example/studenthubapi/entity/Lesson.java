@@ -19,7 +19,7 @@ public class Lesson {
     private Long lessonId;
 
     @ManyToOne
-    @JoinColumn(name="batch_id")
     private Batch batch;
+
     private String dateAndDay;
 }

@@ -2,7 +2,6 @@ package com.example.studenthubapi.service;
 
 import com.example.studenthubapi.entity.Batch;
 import com.example.studenthubapi.entity.Lesson;
-import com.example.studenthubapi.repository.BatchRepo;
 import com.example.studenthubapi.repository.LessonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

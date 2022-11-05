@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
+@CrossOrigin(origins = "http://lcoalhost:3001")
 @RequestMapping("/students")
 public class StudentResource {
 

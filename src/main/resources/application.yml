@@ -1,8 +1,11 @@
+Server:
+  port: 8085
 Spring:
   datasource:
-    url: jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5530434
-    username: sql5530434
-    password: lpVkdrAVlR
+    url: jdbc:sqlserver://pragra.database.windows.net:1433;database=pragradb
+    username: shubham@pragra
+    password: Pragra123
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
     show-sql: true

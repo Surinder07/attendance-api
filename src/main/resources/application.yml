@@ -1,0 +1,13 @@
+Server:
+  port: 8085
+Spring:
+  datasource:
+    url: jdbc:sqlserver://pragra.database.windows.net:1433;database=pragradb
+    username: shubham@pragra
+    password: Pragra123
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      #ddl-auto: create
